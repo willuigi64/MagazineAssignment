@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+:root {
+    --title-color: rgb(255, 81, 0);
+}
+
+html {
+    /* background color */
+    /* font family */
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+header {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+header p {
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-size: 700%;
+    text-transform: lowercase;
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin: 0%;
+    color: var(--title-color);
+}
+
+main {
+    display: grid;
+    grid-template-areas: 
+    "aside1 section1"
+    "aside1 section2"
+    "aside2 section3";
+}
+
+section:nth-of-type(1) {
+    grid-area: section1;
+}
+
+section:nth-of-type(2) {
+    grid-area: section2;
+}
+
+section:nth-of-type(3) {
+    grid-area: section3;
+}
+
+section h2 {
+    border-top: 20px;
+}
+
+/* section h2:nth-of-type(1){
+    border-top-color: green;
+}
+
+section h2:nth-of-type(2){
+    border-top-color: palevioletred;
+}
+
+section h2:nth-of-type(3){
+    border-top-color: lightseagreen;
+} */
+
+/* first aside */
+aside:nth-of-type(odd){
+    grid-area: aside1;
+    
+}
+
+/* second aside */
+aside:nth-of-type(even){
+    grid-area: aside2;
+    
+}
