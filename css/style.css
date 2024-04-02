@@ -5,6 +5,7 @@
 }
 
 html {
+    
     /* background color */
     /* font family */
 }
@@ -18,8 +19,10 @@ html {
 }
 
 header {
+    
     display: flex;
     flex-direction: column-reverse;
+
 }
 
 header p {
@@ -27,6 +30,7 @@ header p {
 }
 
 header h1 {
+    align-self: center;
     font-size: 700%;
     text-transform: lowercase;
     font-family: sans-serif;
@@ -37,10 +41,33 @@ header h1 {
 
 main {
     display: grid;
-    grid-template-areas: 
-    "aside1 section1"
-    "aside1 section2"
-    "aside2 section3";
+    grid-template-areas:
+    'aside1 section1'
+    'aside1 section1'
+    'aside1 section2'
+    'aside2 section2'
+    'aside2 section3'
+    'aside2 section3';
+    gap: 16px;
+    padding: 8px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+section h2 {
+    text-transform: lowercase;
+    font-size: 250%;
+    font-weight: lighter;
+    margin: 0;
+}
+
+ol {
+    list-style-type: decimal;
+    margin: 0;
 }
 
 section:nth-of-type(1) {
@@ -55,30 +82,102 @@ section:nth-of-type(3) {
     grid-area: section3;
 }
 
-section h2 {
-    border-top: 20px;
+section:nth-child(1) > h2{
+    border-top: 16px solid green;
 }
 
-/* section h2:nth-of-type(1){
-    border-top-color: green;
+section:nth-child(1) ol li h3{
+    color: green;
+    text-transform: uppercase;
 }
 
-section h2:nth-of-type(2){
-    border-top-color: palevioletred;
+section:nth-child(2) > h2{
+    border-top: 16px solid pink;
 }
 
-section h2:nth-of-type(3){
-    border-top-color: lightseagreen;
-} */
+section:nth-child(2) ol li h3{
+    color: pink;
+    text-transform: uppercase;
+}
 
-/* first aside */
-aside:nth-of-type(odd){
+section:nth-child(3) > h2{
+    border-top: 16px solid lightseagreen;;
+}
+
+section:nth-child(3) ol li h3{
+    color: lightseagreen;
+    text-transform: uppercase;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+}
+
+/* on our cover */
+aside:nth-of-type(1){
     grid-area: aside1;
     
 }
 
-/* second aside */
-aside:nth-of-type(even){
+/* image and text */
+figure {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    color: #000;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+figure figcaption p em {
+    font-size: 500%;
+    font-style: normal;
+    position: absolute;
+    bottom: 58px;
+    left: 16px;
+}
+
+figure figcaption p:nth-child(1) {
+    color: aliceblue;
+    font-style: normal;
+    position: absolute;
+    bottom: 42px;
+    left: 16px;
+}
+
+figure figcaption p:nth-child(2) {
+    color: gray;
+    font-style: normal;
+    justify-content: flex-end;
+}
+
+/* on our cover */
+aside:nth-of-type(2){
     grid-area: aside2;
-    
+}
+
+aside:nth-of-type(2) h2 {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    margin: 0;
+}
+
+aside:nth-of-type(2) p {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    margin: 0;
+}
+
+aside:nth-of-type(2) ol {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: 0;
 }
